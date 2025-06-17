@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research: Homemade Protein Supplement Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button.active {
+            background-color: #2E4057;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        .page-content {
+            display: none;
+        }
+        .page-content.active {
+            display: block;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2E4057;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50 mb-8">
+        <div class="container mx-auto max-w-5xl flex justify-center p-2 space-x-1 md:space-x-4">
+            <button id="navMarketResearch" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">Case Study</button>
+            <button id="navDrawbacks" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">Drawbacks</button>
+            <button id="navMythBusters" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">Myth Busters</button>
+            <button id="navAITools" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">✨ AI Tools</button>
+        </div>
+    </nav>
+
+    <div id="MarketResearchPage" class="page-content active">
+        <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2E4057] mb-3">The ₹2,100 Monthly Secret</h1>
+                <p class="text-lg md:text-xl text-[#506F8D]">An Analytical Deep Dive into Overcoming High Supplement Costs in the Indian Market</p>
+            </header>
+            <section id="problem" class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-4 text-center">The Market Challenge: The High Cost of Fitness</h2>
+                <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">Our research began by identifying a significant barrier for fitness enthusiasts in the Indian market: the price of commercial protein supplements. This cost creates a major gap between fitness goals and financial reality for many consumers.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <p class="text-lg text-[#506F8D] mb-2">Commercial Whey Protein</p>
+                        <p class="text-5xl font-extrabold text-[#FF4E50] animate-pulse">~₹90</p>
+                        <p class="text-md text-[#506F8D]">Per 30g Serving</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <p class="text-lg text-[#506F8D] mb-2">Our Data-Driven Solution</p>
+                        <p class="text-5xl font-extrabold text-[#2E4057]">₹21.01</p>
+                        <p class="text-md text-[#506F8D]">Per 30g Serving</p>
+                    </div>
+                </div>
+            </section>
+            <section id="solution-composition" class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-4 text-center">The Solution: A Strategic Homemade Blend</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-[#506F8D]">
+                        <p class="mb-4">To counter the market challenge, we formulated a custom protein powder using locally sourced, cost-effective ingredients. The core strategy involves combining multiple vegetarian protein sources to create a "complete protein" profile, ensuring all 9 essential amino acids are present for optimal muscle repair and growth.</p>
+                        <p>This approach not only makes high-quality protein accessible but also provides a range of additional micronutrients not typically found in isolated whey supplements. The chart opposite illustrates the composition of the base blend by weight.</p>
+                    </div>
+                    <div><div class="chart-container mx-auto max-w-sm"><canvas id="compositionDonutChart"></canvas></div></div>
+                </div>
+            </section>
+            <section id="financials" class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-6 text-center">Financial Analysis: Quantifying the Savings</h2>
+                <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">A key objective of this research was to quantify the financial viability of our solution. The data reveals a dramatic cost reduction, translating into substantial monthly savings. This makes consistent protein supplementation, a cornerstone of athletic performance, financially sustainable.</p>
+                <div class="chart-container mx-auto max-w-2xl mb-12"><canvas id="savingsBarChart"></canvas></div>
+                 <div class="overflow-x-auto"><table class="min-w-full bg-white border border-[#A9C5E2]"><thead class="bg-[#2E4057] text-white"><tr><th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ingredient</th><th class="text-center py-3 px-4 uppercase font-semibold text-sm">Weight (g)</th><th class="text-right py-3 px-4 uppercase font-semibold text-sm">Cost (INR)</th></tr></thead><tbody class="text-[#2E4057]"><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Fortune Sattu</td><td class="text-center py-3 px-4">400</td><td class="text-right py-3 px-4">₹ 74.92</td></tr><tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Peanut Powder</td><td class="text-center py-3 px-4">250</td><td class="text-right py-3 px-4">₹ 412.50</td></tr><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Amulya Dairy Whitener</td><td class="text-center py-3 px-4">250</td><td class="text-right py-3 px-4">₹ 118.75</td></tr><tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Flax & Chia Seeds</td><td class="text-center py-3 px-4">100</td><td class="text-right py-3 px-4">₹ 32.00</td></tr><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Performance Boosters (Ashwagandha & Cocoa)</td><td class="text-center py-3 px-4">60</td><td class="text-right py-3 px-4">₹ 104.40</td></tr><tr class="bg-[#506F8D] text-white font-bold"><td class="text-left py-3 px-4">Total Batch</td><td class="text-center py-3 px-4">~1060g</td><td class="text-right py-3 px-4">₹ 742.57</td></tr></tbody></table></div>
+            </section>
+        </div>
+    </div>
+    
+    <div id="DrawbacksPage" class="page-content">
+        <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2E4057] mb-3">The Hidden Drawbacks of Commercial Whey</h1>
+                <p class="text-lg md:text-xl text-[#506F8D]">A Research-Backed Look at What Might Be in Your Shaker</p>
+            </header>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-red-100 text-red-600 text-4xl rounded-full flex items-center justify-center mb-4">🔥</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">1. Nutritional Damage from Heat</h3><p class="text-[#506F8D] mb-3">High-heat industrial processes can damage the protein's structure, reducing its nutritional quality before it's even packaged.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Sánchez-Oliver, A. J., et al. (2018).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-red-100 text-red-600 text-4xl rounded-full flex items-center justify-center mb-4">🔗</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">2. "Blocked" and Unusable Lysine</h3><p class="text-[#506F8D] mb-3">Heat reacts with sugars to "block" the essential amino acid lysine, making it useless for muscle repair, though it's still counted on the label.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Sánchez-Oliver, A. J., et al. (2018).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-yellow-100 text-yellow-600 text-4xl rounded-full flex items-center justify-center mb-4">❓</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">3. Misleading Protein Content</h3><p class="text-[#506F8D] mb-3">"Nitrogen spiking" with cheap fillers can fool protein tests, meaning you get less actual whey protein than advertised.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Saxton, R., & McDougal, O. M. (2021).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-gray-100 text-gray-600 text-4xl rounded-full flex items-center justify-center mb-4">🧪</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">4. Heavy Metal Contamination</h3><p class="text-[#506F8D] mb-3">Studies consistently show that commercial powders contain detectable levels of heavy metals like lead, arsenic, and cadmium.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Bandara, S. B., et al. (2020).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-green-100 text-green-600 text-4xl rounded-full flex items-center justify-center mb-4">🐄</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">5. Contamination at the Source</h3><p class="text-[#506F8D] mb-3">For whey, heavy metals often originate from the milk of cows exposed to contaminated water or feed, making purity uncertain.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Bandara, S. B., et al. (2020).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-red-100 text-red-600 text-4xl rounded-full flex items-center justify-center mb-4">💎</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">6. "Premium" Powders Can Suffer More</h3><p class="text-[#506F8D] mb-3">Research shows that whey hydrolysates—often marketed as superior—can suffer the most significant heat-induced nutritional damage.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Sánchez-Oliver, A. J., et al. (2018).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-yellow-100 text-yellow-600 text-4xl rounded-full flex items-center justify-center mb-4">⚖️</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">7. Inaccurate Label vs. Reality</h3><p class="text-[#506F8D] mb-3">The grams of protein on the label is an approximation. The amount of bioavailable protein your body can use may be significantly lower.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Saxton, R., & McDougal, O. M. (2021).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-gray-100 text-gray-600 text-4xl rounded-full flex items-center justify-center mb-4">📜</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">8. Lack of Strict Regulatory Oversight</h3><p class="text-[#506F8D] mb-3">Supplements often have less stringent regulation than food, allowing for dramatic variations in quality, purity, and label accuracy.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Saxton, R., & McDougal, O. M. (2021).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-red-100 text-red-600 text-4xl rounded-full flex items-center justify-center mb-4">🍬</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">9. High Sugar Can Signal Damage</h3><p class="text-[#506F8D] mb-3">A higher carbohydrate content on a whey supplement label can be an indirect indicator of greater heat damage during processing.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Sánchez-Oliver, A. J., et al. (2018).</p></div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-yellow-100 text-yellow-600 text-4xl rounded-full flex items-center justify-center mb-4">🤢</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">10. Digestive Distress</h3><p class="text-[#506F8D] mb-3">Artificial sweeteners, fillers, and remaining lactose in less pure whey concentrates are common causes of bloating and digestive discomfort.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Ingle, P. D., et al. (2016).</p></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="MythBustersPage" class="page-content">
+        <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2E4057] mb-3">Myth Busters</h1>
+                <p class="text-lg md:text-xl text-[#506F8D]">Commercial Whey vs. Homemade Blend: An Evidence-Based Verdict</p>
+            </header>
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <p class="text-center text-lg text-[#506F8D] mb-8">The most common myth is that commercial whey is inherently superior for getting results. While it has one key advantage—speed—the research reveals a different story when you consider the factors that truly matter for long-term health and performance.</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr><th class="w-1/3 py-3 px-4 bg-gray-50 text-left text-sm font-bold text-[#2E4057] uppercase tracking-wider rounded-tl-lg">Attribute</th><th class="w-1/3 py-3 px-4 bg-[#FF4E50] text-left text-sm font-bold text-white uppercase tracking-wider">Commercial Whey Protein</th><th class="w-1/3 py-3 px-4 bg-[#2E4057] text-left text-sm font-bold text-white uppercase tracking-wider rounded-tr-lg">Your Homemade Blend</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200"><td class="py-4 px-4 font-bold text-[#2E4057]">Absorption Speed</td><td class="py-4 px-4 text-[#506F8D]"><strong>Very High.</strong> This is its main selling point for immediate post-workout use.</td><td class="py-4 px-4 text-[#506F8D]"><strong>Moderate to Slow.</strong> Provides a sustained release of amino acids, which is also beneficial for recovery.</td></tr>
+                            <tr class="bg-gray-50 border-b border-gray-200"><td class="py-4 px-4 font-bold text-[#2E4057]">Protein Quality</td><td class="py-4 px-4 text-[#506F8D]"><strong>Variable to Poor.</strong> High risk of heat damage during processing, leading to unusable "blocked" amino acids.</td><td class="py-4 px-4 text-[#506F8D]"><strong>High.</strong> Made from whole-food ingredients with minimal processing, ensuring protein is undamaged and fully bioavailable.</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-4 px-4 font-bold text-[#2E4057]">Purity & Label Accuracy</td><td class="py-4 px-4 text-[#506F8D]"><strong>Questionable.</strong> High risk of "nitrogen spiking" with cheap fillers to inflate protein numbers. What's on the label may not be what's in the tub.</td><td class="py-4 px-4 text-[#506F8D]"><strong>100% Transparent.</strong> You control every ingredient. No hidden fillers, no artificial sweeteners, no misleading labels.</td></tr>
+                            <tr class="bg-gray-50 border-b border-gray-200"><td class="py-4 px-4 font-bold text-[#2E4057]">Risk of Contaminants</td><td class="py-4 px-4 text-[#506F8D]"><strong>Present.</strong> Research consistently shows detectable levels of industrial heavy metals like lead, arsenic, and cadmium.</td><td class="py-4 px-4 text-[#506F8D]"><strong>Low.</strong> Risk is tied to the general food supply, not industrial contamination or questionable sourcing.</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-4 px-4 font-bold text-[#2E4057]">Nutritional Profile</td><td class="py-4 px-4 text-[#506F8D]"><strong>Narrow.</strong> Highly processed to isolate just protein, stripping out other beneficial nutrients.</td><td class="py-4 px-4 text-[#506F8D]"><strong>Broad.</strong> A whole-food blend delivering protein PLUS fiber, healthy Omega-3 fats, vitamins, and minerals.</td></tr>
+                            <tr class="bg-gray-50"><td class="py-4 px-4 font-bold text-[#2E4057] rounded-bl-lg">Cost</td><td class="py-4 px-4 text-[#506F8D]"><strong>Very High.</strong> Premium pricing for a product with significant potential drawbacks.</td><td class="py-4 px-4 text-[#506F8D]"><strong>Very Low.</strong> Superior value, allowing for consistent use without financial strain.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-8 p-6 bg-[#A9C5E2] rounded-lg text-center"><h3 class="text-2xl font-extrabold text-[#2E4057]">The Verdict: Myth Busted</h3><p class="text-lg text-[#2E4057] mt-2">The idea that commercial whey is "better" is a myth for most people. The "better results" will come from consistently consuming enough <strong>high-quality, pure, and undamaged protein.</strong> Your homemade blend delivers on all these fronts more reliably and safely than most commercial options.</p></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="AIToolsPage" class="page-content">
+         <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2E4057] mb-3">✨ AI-Powered Nutrition Tools</h1>
+                <p class="text-lg md:text-xl text-[#506F8D]">Leverage the Gemini API for personalized recipes and meal plans.</p>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-[#2E4057] mb-4">AI Recipe Generator</h2>
+                    <p class="text-[#506F8D] mb-4">Describe your needs below. For example: "I have a peanut allergy, please make a nut-free version" or "Create a higher-fiber version with a vanilla flavor."</p>
+                    <textarea id="recipe-prompt" class="w-full p-2 border border-gray-300 rounded-md mb-4 h-24" placeholder="Enter your dietary needs, allergies, or flavor preferences..."></textarea>
+                    <button id="generate-recipe-btn" class="w-full bg-[#2E4057] text-white font-bold py-2 px-4 rounded-md hover:bg-[#506F8D] transition-colors">Generate Recipe</button>
+                    <div id="recipe-output" class="mt-6"></div>
+                </section>
+
+                <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-[#2E4057] mb-4">AI Post-Workout Meal Planner</h2>
+                    <p class="text-[#506F8D] mb-4">Describe your workout. For example: "I just finished a 1-hour heavy weightlifting session for my legs" or "I did 45 minutes of intense cardio."</p>
+                    <textarea id="meal-prompt" class="w-full p-2 border border-gray-300 rounded-md mb-4 h-24" placeholder="Enter your workout details..."></textarea>
+                    <button id="generate-meal-btn" class="w-full bg-[#2E4057] text-white font-bold py-2 px-4 rounded-md hover:bg-[#506F8D] transition-colors">Suggest a Meal</button>
+                    <div id="meal-output" class="mt-6"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="text-center my-12 text-[#506F8D]">
+        <p>This analysis demonstrates that through data-driven formulation and local market sourcing, consumers can achieve superior value and performance. </p>
+        <p class="mt-1 text-sm">&copy; 2025 Market Insights. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) { return label.join(' '); } 
+                else { return label; }
+            };
+            
+            const colors = { darkBlue: '#2E4057', mediumBlue: '#506F8D', lightBlue: '#7C99B6', paleBlue: '#A9C5E2', accentRed: '#FF4E50' };
+
+            const compositionData = {
+                labels: ['Sattu (Gram Flour)', 'Peanut Powder', ['Skimmed Milk', 'Powder'], 'Seeds (Flax & Chia)'],
+                datasets: [{ label: 'Ingredient Composition by Weight', data: [400, 250, 250, 100], backgroundColor: [colors.darkBlue, colors.mediumBlue, colors.lightBlue, colors.paleBlue], borderColor: '#FFFFFF', borderWidth: 2, hoverOffset: 4 }]
+            };
+            const compositionDonutChartCtx = document.getElementById('compositionDonutChart');
+            if(compositionDonutChartCtx) { new Chart(compositionDonutChartCtx.getContext('2d'), { type: 'doughnut', data: compositionData, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: colors.mediumBlue, font: {size: 12}}}, title: { display: true, text: 'Base Blend Composition (grams)', color: colors.darkBlue, font: {size: 16, weight: 'bold'}}, tooltip: { callbacks: { title: tooltipTitleCallback }}}, cutout: '50%'} }); }
+
+            const savingsData = {
+                labels: ['Monthly Cost (30 Servings)'],
+                datasets: [ { label: 'Homemade Blend', data: [630.30], backgroundColor: colors.darkBlue, borderColor: colors.mediumBlue, borderWidth: 1 }, { label: 'Commercial Whey Protein', data: [2700], backgroundColor: colors.accentRed, borderColor: '#E54648', borderWidth: 1 } ]
+            };
+            const savingsBarChartCtx = document.getElementById('savingsBarChart');
+            if(savingsBarChartCtx) { new Chart(savingsBarChartCtx.getContext('2d'), { type: 'bar', data: savingsData, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { color: colors.mediumBlue }}, title: { display: true, text: 'Monthly Cost Comparison (INR)', color: colors.darkBlue, font: { size: 16, weight: 'bold'}}, tooltip: { callbacks: { title: tooltipTitleCallback }}}, scales: { x: { beginAtZero: true, ticks: { callback: function(value) { return '₹' + value; }, color: colors.mediumBlue }, grid: { color: '#E0E0E0' }}, y: { ticks: { color: colors.mediumBlue }, grid: { display: false }} } } }); }
+
+            const navButtons = document.querySelectorAll('.nav-button');
+            const pages = document.querySelectorAll('.page-content');
+            function switchPage(pageId) {
+                pages.forEach(page => { page.classList.remove('active'); if (page.id === pageId) { page.classList.add('active'); } });
+                navButtons.forEach(button => { button.classList.remove('active'); if (button.id === `nav${pageId.replace('Page', '')}`) { button.classList.add('active'); } });
+                window.scrollTo(0, 0);
+            }
+            document.getElementById('navMarketResearch').addEventListener('click', () => switchPage('MarketResearchPage'));
+            document.getElementById('navDrawbacks').addEventListener('click', () => switchPage('DrawbacksPage'));
+            document.getElementById('navMythBusters').addEventListener('click', () => switchPage('MythBustersPage'));
+            document.getElementById('navAITools').addEventListener('click', () => switchPage('AIToolsPage'));
+            
+            const activePage = document.querySelector('.page-content.active');
+            if (activePage) { const activeButtonId = `nav${activePage.id.replace('Page', '')}`; const activeButton = document.getElementById(activeButtonId); if (activeButton) { activeButton.classList.add('active'); } }
+
+            const generateRecipeBtn = document.getElementById('generate-recipe-btn');
+            const recipeOutput = document.getElementById('recipe-output');
+            const recipePrompt = document.getElementById('recipe-prompt');
+
+            const generateMealBtn = document.getElementById('generate-meal-btn');
+            const mealOutput = document.getElementById('meal-output');
+            const mealPrompt = document.getElementById('meal-prompt');
+            
+            const apiKey = ""; 
+            
+            async function callGemini(prompt, responseSchema = null) {
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const payload = {
+                    contents: [{ role: "user", parts: [{ text: prompt }] }]
+                };
+
+                if (responseSchema) {
+                    payload.generationConfig = {
+                        responseMimeType: "application/json",
+                        responseSchema: responseSchema
+                    };
+                }
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        return text;
+                    } else {
+                        throw new Error('Invalid response structure from API.');
+                    }
+                } catch (error) {
+                    console.error("Gemini API call error:", error);
+                    return `<p class="text-red-500">Sorry, there was an error generating the content. Please check the console for details.</p>`;
+                }
+            }
+
+            generateRecipeBtn.addEventListener('click', async () => {
+                const userPrompt = recipePrompt.value.trim();
+                if (!userPrompt) {
+                    recipeOutput.innerHTML = `<p class="text-red-500">Please describe your requirements.</p>`;
+                    return;
+                }
+
+                recipeOutput.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
+
+                const fullPrompt = `Based on the following user request, create a new recipe for a homemade, affordable, vegetarian protein powder suitable for the Indian market. The base recipe consists of Sattu, Peanut Powder, Milk Powder, Flax Seeds, and Chia Seeds. Ensure the new recipe maintains a complete amino acid profile. Provide a justification for your ingredient choices. User request: "${userPrompt}"`;
+                
+                const schema = {
+                    type: "OBJECT",
+                    properties: {
+                        recipeName: { type: "STRING" },
+                        justification: { type: "STRING" },
+                        ingredients: {
+                            type: "ARRAY",
+                            items: {
+                                type: "OBJECT",
+                                properties: {
+                                    name: { type: "STRING" },
+                                    weight_grams: { type: "NUMBER" },
+                                    notes: { type: "STRING" }
+                                }
+                            }
+                        },
+                        instructions: { type: "ARRAY", items: { type: "STRING" } }
+                    }
+                };
+
+                const responseText = await callGemini(fullPrompt, schema);
+                
+                try {
+                    const data = JSON.parse(responseText);
+                    let ingredientsHtml = data.ingredients.map(ing => `
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-3">${ing.name}</td>
+                            <td class="py-2 px-3 text-center">${ing.weight_grams}g</td>
+                            <td class="py-2 px-3 text-sm text-gray-600">${ing.notes || ''}</td>
+                        </tr>
+                    `).join('');
+                    
+                    let instructionsHtml = data.instructions.map(step => `<li class="mb-1">${step}</li>`).join('');
+
+                    recipeOutput.innerHTML = `
+                        <div class="p-4 border rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-bold text-[#2E4057] mb-2">${data.recipeName}</h3>
+                            <p class="text-sm text-[#506F8D] mb-4 italic">${data.justification}</p>
+                            <h4 class="font-semibold text-[#2E4057] mb-2">Ingredients:</h4>
+                            <table class="w-full text-left mb-4">
+                                <thead class="bg-gray-200"><tr><th class="py-2 px-3">Name</th><th class="py-2 px-3 text-center">Weight</th><th class="py-2 px-3">Notes</th></tr></thead>
+                                <tbody>${ingredientsHtml}</tbody>
+                            </table>
+                            <h4 class="font-semibold text-[#2E4057] mb-2">Instructions:</h4>
+                            <ol class="list-decimal list-inside text-[#506F8D]">${instructionsHtml}</ol>
+                        </div>
+                    `;
+                } catch (e) {
+                    recipeOutput.innerHTML = `<p class="text-red-500">Could not process the recipe. Raw response:</p><pre class="bg-gray-100 p-2 rounded mt-2 text-sm">${responseText}</pre>`;
+                }
+            });
+
+            generateMealBtn.addEventListener('click', async () => {
+                const userPrompt = mealPrompt.value.trim();
+                if (!userPrompt) {
+                    mealOutput.innerHTML = `<p class="text-red-500">Please describe your workout.</p>`;
+                    return;
+                }
+
+                mealOutput.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
+                
+                const fullPrompt = `I am an Indian vegetarian in Chakdaha, West Bengal. I just finished a workout and I'm about to have my homemade protein shake (made from sattu, peanut powder, and seeds). Based on my workout described below, suggest a simple, quick, and affordable vegetarian meal to eat alongside my shake to complete my post-workout nutrition. Focus on replenishing carbohydrates and include whole foods. My workout: "${userPrompt}"`;
+                
+                const responseText = await callGemini(fullPrompt);
+
+                mealOutput.innerHTML = `<div class="p-4 border rounded-lg bg-gray-50"><p>${responseText.replace(/\n/g, '<br>')}</p></div>`;
+            });
+        });
+    </script>
+</body>
+</html>
