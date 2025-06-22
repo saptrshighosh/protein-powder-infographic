@@ -58,6 +58,7 @@
     <nav class="bg-white shadow-md sticky top-0 z-50 mb-8">
         <div class="container mx-auto max-w-5xl flex justify-center p-2 space-x-1 md:space-x-4">
             <button id="navMarketResearch" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">Case Study</button>
+            <button id="navNutritionalProfile" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">Nutrition</button>
             <button id="navDrawbacks" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">Drawbacks</button>
             <button id="navMythBusters" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">Myth Busters</button>
             <button id="navAITools" class="nav-button px-3 py-2 md:px-4 rounded-md text-sm md:text-base font-medium text-[#2E4057] hover:bg-gray-200">✨ AI Tools</button>
@@ -70,37 +71,93 @@
                 <h1 class="text-4xl md:text-5xl font-extrabold text-[#2E4057] mb-3">The ₹2,100 Monthly Secret</h1>
                 <p class="text-lg md:text-xl text-[#506F8D]">An Analytical Deep Dive into Overcoming High Supplement Costs in the Indian Market</p>
             </header>
-            <section id="problem" class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-4 text-center">The Market Challenge: The High Cost of Fitness</h2>
                 <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">Our research began by identifying a significant barrier for fitness enthusiasts in the Indian market: the price of commercial protein supplements. This cost creates a major gap between fitness goals and financial reality for many consumers.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <p class="text-lg text-[#506F8D] mb-2">Commercial Whey Protein</p>
-                        <p class="text-5xl font-extrabold text-[#FF4E50] animate-pulse">~₹90</p>
-                        <p class="text-md text-[#506F8D]">Per 30g Serving</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <p class="text-lg text-[#506F8D] mb-2">Our Data-Driven Solution</p>
-                        <p class="text-5xl font-extrabold text-[#2E4057]">₹21.01</p>
-                        <p class="text-md text-[#506F8D]">Per 30g Serving</p>
-                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6"><p class="text-lg text-[#506F8D] mb-2">Commercial Whey Protein</p><p class="text-5xl font-extrabold text-[#FF4E50] animate-pulse">~₹90</p><p class="text-md text-[#506F8D]">Per 30g Serving</p></div>
+                    <div class="bg-gray-50 rounded-lg p-6"><p class="text-lg text-[#506F8D] mb-2">Our Data-Driven Solution</p><p class="text-5xl font-extrabold text-[#2E4057]">₹21.01</p><p class="text-md text-[#506F8D]">Per 30g Serving</p></div>
                 </div>
             </section>
-            <section id="solution-composition" class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-4 text-center">The Solution: A Strategic Homemade Blend</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="text-[#506F8D]">
-                        <p class="mb-4">To counter the market challenge, we formulated a custom protein powder using locally sourced, cost-effective ingredients. The core strategy involves combining multiple vegetarian protein sources to create a "complete protein" profile, ensuring all 9 essential amino acids are present for optimal muscle repair and growth.</p>
-                        <p>This approach not only makes high-quality protein accessible but also provides a range of additional micronutrients not typically found in isolated whey supplements. The chart opposite illustrates the composition of the base blend by weight.</p>
-                    </div>
+                    <div class="text-[#506F8D]"><p class="mb-4">To counter the market challenge, we formulated a custom protein powder using locally sourced, cost-effective ingredients. The core strategy involves combining multiple vegetarian protein sources to create a "complete protein" profile, ensuring all 9 essential amino acids are present for optimal muscle repair and growth.</p><p>This approach not only makes high-quality protein accessible but also provides a range of additional micronutrients not typically found in isolated whey supplements. The chart opposite illustrates the composition of the base blend by weight.</p></div>
                     <div><div class="chart-container mx-auto max-w-sm"><canvas id="compositionDonutChart"></canvas></div></div>
                 </div>
             </section>
-            <section id="financials" class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-6 text-center">Financial Analysis: Quantifying the Savings</h2>
                 <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">A key objective of this research was to quantify the financial viability of our solution. The data reveals a dramatic cost reduction, translating into substantial monthly savings. This makes consistent protein supplementation, a cornerstone of athletic performance, financially sustainable.</p>
                 <div class="chart-container mx-auto max-w-2xl mb-12"><canvas id="savingsBarChart"></canvas></div>
-                 <div class="overflow-x-auto"><table class="min-w-full bg-white border border-[#A9C5E2]"><thead class="bg-[#2E4057] text-white"><tr><th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ingredient</th><th class="text-center py-3 px-4 uppercase font-semibold text-sm">Weight (g)</th><th class="text-right py-3 px-4 uppercase font-semibold text-sm">Cost (INR)</th></tr></thead><tbody class="text-[#2E4057]"><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Fortune Sattu</td><td class="text-center py-3 px-4">400</td><td class="text-right py-3 px-4">₹ 74.92</td></tr><tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Peanut Powder</td><td class="text-center py-3 px-4">250</td><td class="text-right py-3 px-4">₹ 412.50</td></tr><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Amulya Dairy Whitener</td><td class="text-center py-3 px-4">250</td><td class="text-right py-3 px-4">₹ 118.75</td></tr><tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Flax & Chia Seeds</td><td class="text-center py-3 px-4">100</td><td class="text-right py-3 px-4">₹ 32.00</td></tr><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Performance Boosters (Ashwagandha & Cocoa)</td><td class="text-center py-3 px-4">60</td><td class="text-right py-3 px-4">₹ 104.40</td></tr><tr class="bg-[#506F8D] text-white font-bold"><td class="text-left py-3 px-4">Total Batch</td><td class="text-center py-3 px-4">~1060g</td><td class="text-right py-3 px-4">₹ 742.57</td></tr></tbody></table></div>
+                <div class="overflow-x-auto"><table class="min-w-full bg-white border border-[#A9C5E2]"><thead class="bg-[#2E4057] text-white"><tr><th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ingredient</th><th class="text-center py-3 px-4 uppercase font-semibold text-sm">Weight (g)</th><th class="text-right py-3 px-4 uppercase font-semibold text-sm">Cost (INR)</th></tr></thead><tbody class="text-[#2E4057]"><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Fortune Sattu</td><td class="text-center py-3 px-4">400</td><td class="text-right py-3 px-4">₹ 74.92</td></tr><tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Peanut Powder</td><td class="text-center py-3 px-4">250</td><td class="text-right py-3 px-4">₹ 412.50</td></tr><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Amulya Dairy Whitener</td><td class="text-center py-3 px-4">250</td><td class="text-right py-3 px-4">₹ 118.75</td></tr><tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Flax & Chia Seeds</td><td class="text-center py-3 px-4">100</td><td class="text-right py-3 px-4">₹ 32.00</td></tr><tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Performance Boosters (Ashwagandha & Cocoa)</td><td class="text-center py-3 px-4">60</td><td class="text-right py-3 px-4">₹ 104.40</td></tr><tr class="bg-[#506F8D] text-white font-bold"><td class="text-left py-3 px-4">Total Batch</td><td class="text-center py-3 px-4">~1060g</td><td class="text-right py-3 px-4">₹ 742.57</td></tr></tbody></table></div>
+            </section>
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-6 text-center">Value-Add: The Performance Booster Workflow</h2>
+                <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">Beyond basic protein, the formula incorporates synergistic ingredients that target specific physiological pathways to enhance recovery and performance. This workflow demonstrates how these "boosters" elevate the blend from a simple supplement to a comprehensive recovery tool.</p>
+                <div class="space-y-8"><div class="flex flex-col md:flex-row items-center"><div class="flex-shrink-0 w-24 h-24 bg-[#A9C5E2] text-[#2E4057] rounded-full flex items-center justify-center text-center font-bold text-sm p-2">Ashwagandha</div><div class="text-5xl text-[#7C99B6] mx-4 hidden md:block">&rarr;</div><div class="text-5xl text-[#7C99B6] my-2 md:hidden">&darr;</div><div class="flex-shrink-0 w-48 h-24 bg-gray-100 rounded-lg flex items-center justify-center text-center font-semibold text-[#506F8D] p-2">Reduces Cortisol & Manages Stress</div><div class="text-5xl text-[#7C99B6] mx-4 hidden md:block">&rarr;</div><div class="text-5xl text-[#7C99B6] my-2 md:hidden">&darr;</div><div class="flex-grow w-full md:w-auto h-24 bg-[#2E4057] text-white rounded-lg flex items-center justify-center text-center font-bold p-2">Improved Recovery & Strength Gains</div></div><div class="flex flex-col md:flex-row items-center"><div class="flex-shrink-0 w-24 h-24 bg-[#A9C5E2] text-[#2E4057] rounded-full flex items-center justify-center text-center font-bold text-sm p-2">Cocoa Powder</div><div class="text-5xl text-[#7C99B6] mx-4 hidden md:block">&rarr;</div><div class="text-5xl text-[#7C99B6] my-2 md:hidden">&darr;</div><div class="flex-shrink-0 w-48 h-24 bg-gray-100 rounded-lg flex items-center justify-center text-center font-semibold text-[#506F8D] p-2">Improves Blood Flow (Nitric Oxide)</div><div class="text-5xl text-[#7C99B6] mx-4 hidden md:block">&rarr;</div><div class="text-5xl text-[#7C99B6] my-2 md:hidden">&darr;</div><div class="flex-grow w-full md:w-auto h-24 bg-[#2E4057] text-white rounded-lg flex items-center justify-center text-center font-bold p-2">Enhanced Nutrient Delivery to Muscles</div></div><div class="flex flex-col md:flex-row items-center"><div class="flex-shrink-0 w-24 h-24 bg-[#A9C5E2] text-[#2E4057] rounded-full flex items-center justify-center text-center font-bold text-sm p-2">Cinnamon</div><div class="text-5xl text-[#7C99B6] mx-4 hidden md:block">&rarr;</div><div class="text-5xl text-[#7C99B6] my-2 md:hidden">&darr;</div><div class="flex-shrink-0 w-48 h-24 bg-gray-100 rounded-lg flex items-center justify-center text-center font-semibold text-[#506F8D] p-2">Improves Insulin Sensitivity</div><div class="text-5xl text-[#7C99B6] mx-4 hidden md:block">&rarr;</div><div class="text-5xl text-[#7C99B6] my-2 md:hidden">&darr;</div><div class="flex-grow w-full md:w-auto h-24 bg-[#2E4057] text-white rounded-lg flex items-center justify-center text-center font-bold p-2">Efficient Nutrient Absorption by Cells</div></div></div>
+            </section>
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                 <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-6 text-center">The Blueprint: Recipe & Formulation</h2>
+                 <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">This section provides the actionable blueprint for replicating the results of this research. The process is simple, requiring only a standard mixer grinder and airtight storage.</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div><h3 class="text-xl font-bold text-[#2E4057] mb-3">Ingredient List</h3><ul class="list-disc list-inside text-[#506F8D] space-y-2"><li>Sattu (Roasted Gram Flour): 400g</li><li>Peanut Powder: 250g</li><li>Skimmed Milk Powder: 250g</li><li>Flax Seeds: 50g</li><li>Chia Seeds: 50g</li><li>Ashwagandha Powder: 30g</li><li>Unsweetened Cocoa Powder: 30g</li><li>Cinnamon Powder: 1 Tsp</li></ul></div>
+                     <div><h3 class="text-xl font-bold text-[#2E4057] mb-3">Methodology</h3><ol class="list-decimal list-inside text-[#506F8D] space-y-2"><li><strong>Prepare Powders:</strong> If using whole ingredients, lightly roast peanuts, flax, and chia seeds. Let cool completely, then grind each into a fine powder.</li><li><strong>Combine:</strong> In a large, dry bowl, add all powdered ingredients, including Sattu, milk powder, Ashwagandha, cocoa, and cinnamon.</li><li><strong>Mix Thoroughly:</strong> Whisk ingredients together until a uniform color and texture is achieved. For best results, sift the mixture.</li><li><strong>Store:</strong> Transfer the final product to a clean, dry, airtight container. Store in a cool, dark place for a shelf life of up to 3 months.</li><li><strong>Usage Protocol:</strong> Mix one scoop (~30g) with 250-300ml of milk or water post-workout.</li></ol></div>
+                 </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="NutritionalProfilePage" class="page-content">
+        <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2E4057] mb-3">Nutritional Profile</h1>
+                <p class="text-lg md:text-xl text-[#506F8D]">Approximate Breakdown per 30g Serving</p>
+            </header>
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-6 text-center">Macro-Nutrient Overview</h2>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                        <p class="text-lg text-[#506F8D]">Protein</p><p class="text-4xl font-extrabold text-[#2E4057]">8-9 g</p><p class="text-xs text-[#7C99B6]">Complete Amino Acids</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <p class="text-lg text-[#506F8D]">Carbohydrates</p><p class="text-4xl font-extrabold text-[#2E4057]">13-15 g</p><p class="text-xs text-[#7C99B6]">Complex & Sustained Energy</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <p class="text-lg text-[#506F8D]">Fats</p><p class="text-4xl font-extrabold text-[#2E4057]">4-5 g</p><p class="text-xs text-[#7C99B6]">Includes Omega-3s</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <p class="text-lg text-[#506F8D]">Calories</p><p class="text-4xl font-extrabold text-[#2E4057]">120-135</p><p class="text-xs text-[#7C99B6]">Nutrient-Dense</p>
+                    </div>
+                </div>
+            </section>
+             <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-6 text-center">Beyond Protein: The Whole-Food Advantage</h2>
+                <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">Unlike isolated whey, this blend provides essential nutrients from its constituent ingredients, supporting overall health.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start bg-gray-50 p-4 rounded-lg"><span class="text-2xl mr-4">🌾</span><div><strong class="text-[#2E4057]">Sattu & Peanut Powder:</strong> Provide the high-quality protein base and contribute to the complete amino acid profile.</div></div>
+                    <div class="flex items-start bg-gray-50 p-4 rounded-lg"><span class="text-2xl mr-4">🌱</span><div><strong class="text-[#2E4057]">Flax & Chia Seeds:</strong> Deliver crucial dietary fiber (approx. 2-3g per serving) for digestive health and are rich in anti-inflammatory Omega-3 fatty acids.</div></div>
+                    <div class="flex items-start bg-gray-50 p-4 rounded-lg"><span class="text-2xl mr-4">💪</span><div><strong class="text-[#2E4057]">Ashwagandha & Cocoa:</strong> Offer adaptogenic benefits to manage stress and antioxidants to fight inflammation, aiding recovery.</div></div>
+                </div>
+            </section>
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                 <h2 class="text-2xl md:text-3xl font-bold text-[#2E4057] mb-6 text-center">Protein Contribution per 30g Serving</h2>
+                 <p class="text-center text-[#506F8D] mb-8 max-w-3xl mx-auto">This table shows how each component contributes to the final protein count in a single scoop.</p>
+                 <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-[#A9C5E2]">
+                        <thead class="bg-[#2E4057] text-white">
+                            <tr><th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ingredient</th><th class="text-center py-3 px-4 uppercase font-semibold text-sm">Weight in Scoop</th><th class="text-right py-3 px-4 uppercase font-semibold text-sm">Approx. Protein (g)</th></tr>
+                        </thead>
+                        <tbody class="text-[#2E4057]">
+                            <tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Peanut Powder</td><td class="text-center py-3 px-4">7.1 g</td><td class="text-right py-3 px-4">~3.5 g</td></tr>
+                            <tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Sattu</td><td class="text-center py-3 px-4">11.3 g</td><td class="text-right py-3 px-4">~2.3 g</td></tr>
+                            <tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Amulya Dairy Whitener</td><td class="text-center py-3 px-4">7.1 g</td><td class="text-right py-3 px-4">~1.4 g</td></tr>
+                            <tr class="border-b border-[#A9C5E2] bg-gray-50"><td class="text-left py-3 px-4">Flax & Chia Seeds</td><td class="text-center py-3 px-4">2.8 g</td><td class="text-right py-3 px-4">~0.5 g</td></tr>
+                            <tr class="border-b border-[#A9C5E2]"><td class="text-left py-3 px-4">Cocoa & Other</td><td class="text-center py-3 px-4">~1.7 g</td><td class="text-right py-3 px-4">~0.3 g</td></tr>
+                            <tr class="bg-[#506F8D] text-white font-bold"><td class="text-left py-3 px-4">Total Serving</td><td class="text-center py-3 px-4">30 g</td><td class="text-right py-3 px-4">~8.0 g</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     </div>
@@ -123,6 +180,7 @@
                 <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-red-100 text-red-600 text-4xl rounded-full flex items-center justify-center mb-4">🍬</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">9. High Sugar Can Signal Damage</h3><p class="text-[#506F8D] mb-3">A higher carbohydrate content on a whey supplement label can be an indirect indicator of greater heat damage during processing.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Sánchez-Oliver, A. J., et al. (2018).</p></div>
                 <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"><div class="w-20 h-20 bg-yellow-100 text-yellow-600 text-4xl rounded-full flex items-center justify-center mb-4">🤢</div><h3 class="text-xl font-bold text-[#2E4057] mb-2">10. Digestive Distress</h3><p class="text-[#506F8D] mb-3">Artificial sweeteners, fillers, and remaining lactose in less pure whey concentrates are common causes of bloating and digestive discomfort.</p><p class="text-xs text-[#7C99B6] italic mt-auto">Ingle, P. D., et al. (2016).</p></div>
             </div>
+
         </div>
     </div>
     
@@ -160,7 +218,6 @@
                 <h1 class="text-4xl md:text-5xl font-extrabold text-[#2E4057] mb-3">✨ AI-Powered Nutrition Tools</h1>
                 <p class="text-lg md:text-xl text-[#506F8D]">Leverage the Gemini API for personalized recipes and meal plans.</p>
             </header>
-
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
                     <h2 class="text-2xl font-bold text-[#2E4057] mb-4">AI Recipe Generator</h2>
@@ -169,7 +226,6 @@
                     <button id="generate-recipe-btn" class="w-full bg-[#2E4057] text-white font-bold py-2 px-4 rounded-md hover:bg-[#506F8D] transition-colors">Generate Recipe</button>
                     <div id="recipe-output" class="mt-6"></div>
                 </section>
-
                 <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
                     <h2 class="text-2xl font-bold text-[#2E4057] mb-4">AI Post-Workout Meal Planner</h2>
                     <p class="text-[#506F8D] mb-4">Describe your workout. For example: "I just finished a 1-hour heavy weightlifting session for my legs" or "I did 45 minutes of intense cardio."</p>
@@ -220,6 +276,7 @@
                 window.scrollTo(0, 0);
             }
             document.getElementById('navMarketResearch').addEventListener('click', () => switchPage('MarketResearchPage'));
+            document.getElementById('navNutritionalProfile').addEventListener('click', () => switchPage('NutritionalProfilePage'));
             document.getElementById('navDrawbacks').addEventListener('click', () => switchPage('DrawbacksPage'));
             document.getElementById('navMythBusters').addEventListener('click', () => switchPage('MythBustersPage'));
             document.getElementById('navAITools').addEventListener('click', () => switchPage('AIToolsPage'));
@@ -239,118 +296,48 @@
             
             async function callGemini(prompt, responseSchema = null) {
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ role: "user", parts: [{ text: prompt }] }]
-                };
-
-                if (responseSchema) {
-                    payload.generationConfig = {
-                        responseMimeType: "application/json",
-                        responseSchema: responseSchema
-                    };
-                }
-
+                const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+                if (responseSchema) { payload.generationConfig = { responseMimeType: "application/json", responseSchema: responseSchema }; }
                 try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (!response.ok) {
-                        throw new Error(`API call failed with status: ${response.status}`);
-                    }
+                    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if (!response.ok) { throw new Error(`API call failed with status: ${response.status}`); }
                     const result = await response.json();
                     if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        return text;
-                    } else {
-                        throw new Error('Invalid response structure from API.');
-                    }
+                        return result.candidates[0].content.parts[0].text;
+                    } else { throw new Error('Invalid response structure from API.'); }
                 } catch (error) {
                     console.error("Gemini API call error:", error);
                     return `<p class="text-red-500">Sorry, there was an error generating the content. Please check the console for details.</p>`;
                 }
             }
 
-            generateRecipeBtn.addEventListener('click', async () => {
-                const userPrompt = recipePrompt.value.trim();
-                if (!userPrompt) {
-                    recipeOutput.innerHTML = `<p class="text-red-500">Please describe your requirements.</p>`;
-                    return;
-                }
+            if(generateRecipeBtn){
+                generateRecipeBtn.addEventListener('click', async () => {
+                    const userPrompt = recipePrompt.value.trim();
+                    if (!userPrompt) { recipeOutput.innerHTML = `<p class="text-red-500">Please describe your requirements.</p>`; return; }
+                    recipeOutput.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
+                    const fullPrompt = `Based on the following user request, create a new recipe for a homemade, affordable, vegetarian protein powder suitable for the Indian market. The base recipe consists of Sattu, Peanut Powder, Milk Powder, Flax Seeds, and Chia Seeds. Ensure the new recipe maintains a complete amino acid profile. Provide a justification for your ingredient choices. User request: "${userPrompt}"`;
+                    const schema = { type: "OBJECT", properties: { recipeName: { type: "STRING" }, justification: { type: "STRING" }, ingredients: { type: "ARRAY", items: { type: "OBJECT", properties: { name: { type: "STRING" }, weight_grams: { type: "NUMBER" }, notes: { type: "STRING" } } } }, instructions: { type: "ARRAY", items: { type: "STRING" } } } };
+                    const responseText = await callGemini(fullPrompt, schema);
+                    try {
+                        const data = JSON.parse(responseText);
+                        let ingredientsHtml = data.ingredients.map(ing => `<tr class="border-b border-gray-200"><td class="py-2 px-3">${ing.name}</td><td class="py-2 px-3 text-center">${ing.weight_grams}g</td><td class="py-2 px-3 text-sm text-gray-600">${ing.notes || ''}</td></tr>`).join('');
+                        let instructionsHtml = data.instructions.map(step => `<li class="mb-1">${step}</li>`).join('');
+                        recipeOutput.innerHTML = `<div class="p-4 border rounded-lg bg-gray-50"><h3 class="text-xl font-bold text-[#2E4057] mb-2">${data.recipeName}</h3><p class="text-sm text-[#506F8D] mb-4 italic">${data.justification}</p><h4 class="font-semibold text-[#2E4057] mb-2">Ingredients:</h4><table class="w-full text-left mb-4"><thead class="bg-gray-200"><tr><th class="py-2 px-3">Name</th><th class="py-2 px-3 text-center">Weight</th><th class="py-2 px-3">Notes</th></tr></thead><tbody>${ingredientsHtml}</tbody></table><h4 class="font-semibold text-[#2E4057] mb-2">Instructions:</h4><ol class="list-decimal list-inside text-[#506F8D]">${instructionsHtml}</ol></div>`;
+                    } catch (e) { recipeOutput.innerHTML = `<p class="text-red-500">Could not process the recipe. Raw response:</p><pre class="bg-gray-100 p-2 rounded mt-2 text-sm">${responseText}</pre>`; }
+                });
+            }
 
-                recipeOutput.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
-
-                const fullPrompt = `Based on the following user request, create a new recipe for a homemade, affordable, vegetarian protein powder suitable for the Indian market. The base recipe consists of Sattu, Peanut Powder, Milk Powder, Flax Seeds, and Chia Seeds. Ensure the new recipe maintains a complete amino acid profile. Provide a justification for your ingredient choices. User request: "${userPrompt}"`;
-                
-                const schema = {
-                    type: "OBJECT",
-                    properties: {
-                        recipeName: { type: "STRING" },
-                        justification: { type: "STRING" },
-                        ingredients: {
-                            type: "ARRAY",
-                            items: {
-                                type: "OBJECT",
-                                properties: {
-                                    name: { type: "STRING" },
-                                    weight_grams: { type: "NUMBER" },
-                                    notes: { type: "STRING" }
-                                }
-                            }
-                        },
-                        instructions: { type: "ARRAY", items: { type: "STRING" } }
-                    }
-                };
-
-                const responseText = await callGemini(fullPrompt, schema);
-                
-                try {
-                    const data = JSON.parse(responseText);
-                    let ingredientsHtml = data.ingredients.map(ing => `
-                        <tr class="border-b border-gray-200">
-                            <td class="py-2 px-3">${ing.name}</td>
-                            <td class="py-2 px-3 text-center">${ing.weight_grams}g</td>
-                            <td class="py-2 px-3 text-sm text-gray-600">${ing.notes || ''}</td>
-                        </tr>
-                    `).join('');
-                    
-                    let instructionsHtml = data.instructions.map(step => `<li class="mb-1">${step}</li>`).join('');
-
-                    recipeOutput.innerHTML = `
-                        <div class="p-4 border rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-bold text-[#2E4057] mb-2">${data.recipeName}</h3>
-                            <p class="text-sm text-[#506F8D] mb-4 italic">${data.justification}</p>
-                            <h4 class="font-semibold text-[#2E4057] mb-2">Ingredients:</h4>
-                            <table class="w-full text-left mb-4">
-                                <thead class="bg-gray-200"><tr><th class="py-2 px-3">Name</th><th class="py-2 px-3 text-center">Weight</th><th class="py-2 px-3">Notes</th></tr></thead>
-                                <tbody>${ingredientsHtml}</tbody>
-                            </table>
-                            <h4 class="font-semibold text-[#2E4057] mb-2">Instructions:</h4>
-                            <ol class="list-decimal list-inside text-[#506F8D]">${instructionsHtml}</ol>
-                        </div>
-                    `;
-                } catch (e) {
-                    recipeOutput.innerHTML = `<p class="text-red-500">Could not process the recipe. Raw response:</p><pre class="bg-gray-100 p-2 rounded mt-2 text-sm">${responseText}</pre>`;
-                }
-            });
-
-            generateMealBtn.addEventListener('click', async () => {
-                const userPrompt = mealPrompt.value.trim();
-                if (!userPrompt) {
-                    mealOutput.innerHTML = `<p class="text-red-500">Please describe your workout.</p>`;
-                    return;
-                }
-
-                mealOutput.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
-                
-                const fullPrompt = `I am an Indian vegetarian in Chakdaha, West Bengal. I just finished a workout and I'm about to have my homemade protein shake (made from sattu, peanut powder, and seeds). Based on my workout described below, suggest a simple, quick, and affordable vegetarian meal to eat alongside my shake to complete my post-workout nutrition. Focus on replenishing carbohydrates and include whole foods. My workout: "${userPrompt}"`;
-                
-                const responseText = await callGemini(fullPrompt);
-
-                mealOutput.innerHTML = `<div class="p-4 border rounded-lg bg-gray-50"><p>${responseText.replace(/\n/g, '<br>')}</p></div>`;
-            });
+            if(generateMealBtn){
+                generateMealBtn.addEventListener('click', async () => {
+                    const userPrompt = mealPrompt.value.trim();
+                    if (!userPrompt) { mealOutput.innerHTML = `<p class="text-red-500">Please describe your workout.</p>`; return; }
+                    mealOutput.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
+                    const fullPrompt = `I am an Indian vegetarian in Chakdaha, West Bengal. I just finished a workout and I'm about to have my homemade protein shake (made from sattu, peanut powder, and seeds). Based on my workout described below, suggest a simple, quick, and affordable vegetarian meal to eat alongside my shake to complete my post-workout nutrition. Focus on replenishing carbohydrates and include whole foods. My workout: "${userPrompt}"`;
+                    const responseText = await callGemini(fullPrompt);
+                    mealOutput.innerHTML = `<div class="p-4 border rounded-lg bg-gray-50"><p>${responseText.replace(/\n/g, '<br>')}</p></div>`;
+                });
+            }
         });
     </script>
 </body>
